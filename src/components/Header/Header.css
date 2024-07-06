@@ -1,0 +1,6 @@
+@import '../../styles/Variables.css';
+
+.headerContainer {
+    display: flex;
+    
+}
