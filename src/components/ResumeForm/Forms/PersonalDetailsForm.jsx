@@ -1,16 +1,16 @@
-import React from 'react';
-import '../ResumeForm.css';
+import React from "react";
+import CustomField from "./CustomField";
 
-function PersonalDetailsForm({ personalDetails, setPersonalDetails }){
+function PersonalDetailsForm({ personalDetails, setPersonalDetails }) {
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setPersonalDetails((prevDetails) => ({
             ...prevDetails,
             [name]: value,
-        }))
-    }
-    
-    return(
+        }));
+    };
+
+    return (
         <form className="form">
             <label htmlFor="fullname" className="label">
                 Full name:
@@ -27,7 +27,7 @@ function PersonalDetailsForm({ personalDetails, setPersonalDetails }){
                 <input 
                     type="text" 
                     id="email" 
-                    name="email" 
+                    name="email"
                     value={personalDetails.email}
                     onChange={handleChange}
                 />
@@ -42,8 +42,10 @@ function PersonalDetailsForm({ personalDetails, setPersonalDetails }){
                     onChange={handleChange}
                 />
             </label>
+            <CustomField details={personalDetails} setDetails={setPersonalDetails} />
         </form>
-    )
+    );
 }
 
 export default PersonalDetailsForm;
+

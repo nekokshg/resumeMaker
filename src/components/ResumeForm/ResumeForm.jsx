@@ -2,8 +2,21 @@
 import PersonalDetailsForm from "./Forms/PersonalDetailsForm";
 import EducationForm from "./Forms/EducationForm";
 import WorkExperience from "./Forms/WorkExperienceForm";
+import '../ResumeForm/ResumeForm.css'
+import React, { useState } from "react";
 
-function ResumeForm({ personalDetails, setPersonalDetails, workDetails, setWorkDetails, educationDetails, setEducationDetails}) {
+function ResumeForm() {
+    const [personalDetails, setPersonalDetails] = useState({
+        fullname: "",
+        email: "",
+        website: ""
+    });
+    const [workDetails, setWorkDetails] = useState({});
+    const [educationDetails, setEducationDetails] = useState([
+        { schoolName: "", degree: "", startDate: "", endDate: "" }
+    ]);
+
+    
     return(
         <div className="resumeFormContainer">
             <h2>Personal Details</h2>

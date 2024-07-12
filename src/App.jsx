@@ -32,10 +32,10 @@ function App() {
       <Header />
       <div className="mainContainer">
         <ResumeForm personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} workDetails={workDetails} setWorkDetails={setWorkDetails} educationDetails={educationDetails} setEducationDetails={setEducationDetails} />
-        <ResumePreview personalDetails={personalDetails}/>
+        <ResumePreview personalDetails={personalDetails} workDetails={workDetails} educationDetails={educationDetails}/>
       </div>
     </>
   )
 }
 
-export default App
+export default App;
