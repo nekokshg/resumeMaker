@@ -1,11 +1,15 @@
 import React from "react";
+import CustomField from "./CustomField";
 
 function EducationForm({ educationDetails, setEducationDetails }) {
     const handleChange = (index, e) => {
         const { name, value } = e.target;
-        const updatedEducationDetails = [...educationDetails];
-        updatedEducationDetails[index][name] = value;
-        setEducationDetails(updatedEducationDetails);
+        const updatedEducationDetails = [...educationDetails];  // Create a copy of educationDetails array
+        updatedEducationDetails[index] = {                    // Update the specific entry at index
+            ...updatedEducationDetails[index],                // Copy the existing entry
+            [name]: value                                    // Update the specific field with new value
+        };
+        setEducationDetails(updatedEducationDetails);         // Update educationDetails state
     };
 
     const addEducationEntry = () => {
@@ -62,10 +66,11 @@ function EducationForm({ educationDetails, setEducationDetails }) {
                 </div>
             ))}
             <button type="button" onClick={addEducationEntry}>
-                Add Another School
+                Add Another Education Entry
             </button>
         </form>
     );
 }
 
 export default EducationForm;
+

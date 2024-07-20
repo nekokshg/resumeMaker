@@ -12,20 +12,17 @@ function App() {
     website: '',
   });
 
-  const [workDetails, setWorkDetails] = useState({
-    companyName: '',
-    jobTitle: '',
-    startDate: '',
-    endDate: '',
-    location: '',
-  });
+  const [workDetails, setWorkDetails] = useState([
+    { companyName: '',
+      jobTitle: '',
+      startDate: '',
+      endDate: '',
+      location: ''}
+  ])
 
-  const [educationDetails, setEducationDetails] = useState({
-    schoolName: '',
-    degree: '',
-    startDate: '',
-    endDate: '',
-  })
+  const [educationDetails, setEducationDetails] = useState([
+    { schoolName: '', degree: '', startDate: '', endDate: '' }
+  ]);
 
   return (
     <>
